@@ -1,0 +1,41 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/"><span>Bookers</span></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+        <% if user_signed_in? %>
+        <il>
+           <%= link_to '商品一覧', items_index_path %>
+        </il>
+        <li>
+          <%= link_to "会員一覧", customers_path %>
+        </li>
+        <il>
+           <%= link_to '注文履歴一覧', orders_index_path %>
+        </il>
+        <li>
+          <%= link_to "ジャンル一覧", categories_path %>
+        </li>
+      <% else %>
+       <il>
+           <%= link_to 'about', admin_home_about_path(current_user.id) %>
+        </il>
+        <li>
+          <%= link_to "商品一覧", items_index_path %>
+        </li>
+        <il>
+           <%= link_to '新規登録', new_user_registration  %>
+        </il>
+        <li>
+          <%= link_to "ログイン", new_user_session %>
+        </li>
+      <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

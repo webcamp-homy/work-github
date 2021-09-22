@@ -1,0 +1,21 @@
+ <h4>商品一覧</h4>
+ <%= link_to "新規" new_admin_path %>
+    <table class="table">
+     <tr>
+        <th>商品ID</th>
+        <th>商品名</th>
+        <th>税抜価格</th>
+        <th>ジャンル</th>
+        <th>ステータス</th>
+     </tr>
+    <% @items.each do |items| %>
+    <thead>
+      <tr>
+      <th>id</th>
+      <th><%= item.name %></th>
+      <th><%= item.price %></th>
+      </tr>
+    </thead>
+    <% end %>
+    </div>
+    </table>
