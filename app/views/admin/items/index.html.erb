@@ -1,5 +1,5 @@
  <h4>商品一覧</h4>
- <%= link_to "新規" new_admin_path %>
+ <%= link_to "新規", new_admin_item_path %>
     <table class="table">
      <tr>
         <th>商品ID</th>
@@ -8,12 +8,16 @@
         <th>ジャンル</th>
         <th>ステータス</th>
      </tr>
-    <% @items.each do |items| %>
+    <% @items.each do |item| %>
     <thead>
       <tr>
       <th>id</th>
       <th><%= item.name %></th>
       <th><%= item.price %></th>
+      <th><%= category.name %></th>
+      <th><%= f.select :Item_status, Item.item_status.keys, class: "item" %>
+       
+      </th>
       </tr>
     </thead>
     <% end %>

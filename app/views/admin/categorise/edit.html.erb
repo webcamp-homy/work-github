@@ -1,0 +1,14 @@
+<h4>ジャンル編集</h4>
+<table>
+  <%= form_with model:@category, admin_category_path, local:true do |f| %>
+  <tr>
+   <th>
+     <p>ジャンル名</p>
+   </th>
+   <th>
+    <%= f.text_field :name %>
+    <%= f.submit "変更を保存", class:"btn-success" 
+   </th>
+   
+  </tr>
+</table>
